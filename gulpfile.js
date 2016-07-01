@@ -22,10 +22,10 @@ gulp.task('default', [
 	'build',
 	'watch'
 ], function() {
-	gulp.watch('source/styles/**/*.scss',  ['styles']);
-	gulp.watch('source/scripts/**/*.js', ['scripts']);
-	// gulp.watch('source/images/**/*',  ['images']);
-	// gulp.watch('source/fonts/**/*',   ['fonts']);
+	gulp.watch('source/styles/**/*.scss', ['styles']);
+	gulp.watch('source/scripts/**/*.js',  ['scripts']);
+	// gulp.watch('source/images/**/*',      ['images']);
+	// gulp.watch('source/fonts/**/*',       ['fonts']);
 	gulp.watch('**/*.php', browserSync.reload());
 });
 
@@ -48,7 +48,7 @@ gulp.task('styles', function(){
 			browsers: ['last 2 version'],
 		}))
 		.pipe(sourcemaps.write())
-		.pipe(changed('public/styles'))
+		// .pipe(changed('public/styles'))
 		.pipe(browserSync.reload({ stream: true }))
 		.pipe(gulp.dest('public/styles'));
 });
@@ -83,17 +83,17 @@ gulp.task('fonts', function() {
 		.pipe(gulp.dest('public/fonts'));
 });
 
-gulp.task('watch', ['styles', 'build'], function() {
+gulp.task('watch', ['build'], function() {
 	browserSync.init([
 		'public/styles/*.css',
 		'public/scripts/*.js',
 		'**/*.php'
 	], {
+		host: 'conversion.local', // This tells browser sync what URL to open on load with port 3000
+		// port: 4000, // This is if you want to change the port
 		proxy: {
 			target: 'conversion.local:8888', // This is the link to your local as it is in MAMP
 		},
-		host: 'conversion.local', // This tells browser sync what URL to open on load with port 3000
-		// port: 4000, // This is if you want to change the port
 		open: "external",
 		snippetOptions: {
 			ignorePaths: [
