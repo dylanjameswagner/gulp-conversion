@@ -14,6 +14,10 @@ var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
+// images
+var cache    = require('gulp-cache');
+// var imagemin = require('gulp-imagemin');
+
 // watch
 var changed		= require('gulp-changed');
 var browserSync = require('browser-sync');
@@ -35,7 +39,7 @@ gulp.task('watch', ['browserSync'], function() {
 	gulp.watch('source/scripts/**/*.js',  ['scripts']);
 	// gulp.watch('source/images/**/*',      ['images']);
 	// gulp.watch('source/fonts/**/*',       ['fonts']);
-	gulp.watch('**/*.php', browserSync.reload());
+	gulp.watch('**/*.php', browserSync.reload);
 });
 
 gulp.task('browserSync', ['build'], function() {
@@ -95,8 +99,12 @@ gulp.task('scripts-modernizr', function() {
 });
 
 gulp.task('images', function() {
-	return gulp.src('source/images/**/*')
-		.pipe(changed('public/images'))
+	return gulp.src('source/images/**/*.+(png|jpg|jpeg|gif|svg)')
+		// .pipe(imagemin())
+		// .pipe(cache(imagemin({
+		// 	interlaced: true,
+		// })))
+		// .pipe(changed('public/images'))
 		.pipe(gulp.dest('public/images'));
 });
 
@@ -106,8 +114,13 @@ gulp.task('fonts', function() {
 		.pipe(gulp.dest('public/fonts'));
 });
 
-gulp.task('delete', function() {
+gulp.task('clean:public', function() {
 	del([
-		'public',
+		'public/**',
+		'!public',
 	]);
+});
+
+gulp.task('clean:cache', function() {
+	return cache.clearAll();
 });
