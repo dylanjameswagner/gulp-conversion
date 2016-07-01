@@ -21,13 +21,7 @@ var browserSync = require('browser-sync');
 gulp.task('default', [
 	'build',
 	'watch'
-], function() {
-	gulp.watch('source/styles/**/*.scss', ['styles']);
-	gulp.watch('source/scripts/**/*.js',  ['scripts']);
-	// gulp.watch('source/images/**/*',      ['images']);
-	// gulp.watch('source/fonts/**/*',       ['fonts']);
-	gulp.watch('**/*.php', browserSync.reload());
-});
+]);
 
 gulp.task('build', [
 	'styles',
@@ -35,6 +29,35 @@ gulp.task('build', [
 	'images',
 	'fonts',
 ]);
+
+gulp.task('watch', ['browserSync'], function() {
+	gulp.watch('source/styles/**/*.scss', ['styles']);
+	gulp.watch('source/scripts/**/*.js',  ['scripts']);
+	// gulp.watch('source/images/**/*',      ['images']);
+	// gulp.watch('source/fonts/**/*',       ['fonts']);
+	gulp.watch('**/*.php', browserSync.reload());
+});
+
+gulp.task('browserSync', ['build'], function() {
+	browserSync.init([
+		'public/styles/*.css',
+		'public/scripts/*.js',
+		'**/*.php'
+	], {
+		host: 'conversion.local', // This tells browser sync what URL to open on load with port 3000
+		// port: 4000, // This is if you want to change the port
+		proxy: {
+			target: 'conversion.local:8888', // This is the link to your local as it is in MAMP
+		},
+		open: "external",
+		snippetOptions: {
+			ignorePaths: [
+				"wp-admin/**",
+				"wp/wp-admin/**"
+			]
+		}
+	});
+});
 
 gulp.task('styles', function(){
 	return gulp.src('source/styles/*.scss')
@@ -61,7 +84,7 @@ gulp.task('scripts', ['scripts-modernizr'], function(){
 		// .pipe(browserify())
 	    .pipe(uglify())
 		.on('error', notify.onError("Error: <%= error.message %>"))
-		.pipe(changed('public/scripts'))
+		// .pipe(changed('public/scripts'))
 		.pipe(gulp.dest('public/scripts'));
 });
 
@@ -83,29 +106,8 @@ gulp.task('fonts', function() {
 		.pipe(gulp.dest('public/fonts'));
 });
 
-gulp.task('watch', ['build'], function() {
-	browserSync.init([
-		'public/styles/*.css',
-		'public/scripts/*.js',
-		'**/*.php'
-	], {
-		host: 'conversion.local', // This tells browser sync what URL to open on load with port 3000
-		// port: 4000, // This is if you want to change the port
-		proxy: {
-			target: 'conversion.local:8888', // This is the link to your local as it is in MAMP
-		},
-		open: "external",
-		snippetOptions: {
-			ignorePaths: [
-				"wp-admin/**",
-				"wp/wp-admin/**"
-			]
-		}
-	});
-});
-
 gulp.task('delete', function() {
 	del([
-		'public/styles',
+		'public',
 	]);
 });
