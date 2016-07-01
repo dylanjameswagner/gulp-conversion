@@ -54,12 +54,11 @@ gulp.task('styles', function(){
 });
 
 gulp.task('scripts', ['scripts-modernizr'], function(){
-	// return gulp.src(['source/scripts/**/*.js'])
 	return gulp.src([
 			'source/scripts/script.js',
 		])
 		.pipe(concat('script.js'))
-//		.pipe(browserify())
+		// .pipe(browserify())
 	    .pipe(uglify())
 		.on('error', notify.onError("Error: <%= error.message %>"))
 		.pipe(changed('public/scripts'))

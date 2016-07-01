@@ -16,7 +16,7 @@
 </head>
 <body>
 
-	<h1>Conversion</h1>
+	<h1 class="site-logo">Conversion</h1>
 
 <?php include 'kitchen-sink.php'; ?>
 
