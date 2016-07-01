@@ -19,7 +19,7 @@ var cache    = require('gulp-cache');
 // var imagemin = require('gulp-imagemin');
 
 // watch
-var changed		= require('gulp-changed');
+var changed     = require('gulp-changed');
 var browserSync = require('browser-sync');
 
 gulp.task('default', [
@@ -30,6 +30,7 @@ gulp.task('default', [
 gulp.task('build', [
 	'styles',
 	'scripts',
+	'scripts-modernizr',
 	'images',
 	'fonts',
 ]);
@@ -80,7 +81,7 @@ gulp.task('styles', function(){
 		.pipe(gulp.dest('public/styles'));
 });
 
-gulp.task('scripts', ['scripts-modernizr'], function(){
+gulp.task('scripts', function(){
 	return gulp.src([
 			'source/scripts/script.js',
 		])
