@@ -1,0 +1,19 @@
+// @charset 'UTF-8';
+
+/** normalize */
+@import "node_modules/normalize.scss/normalize";
+
+/** setup */
+@import 'setup/colors';
+@import 'setup/fonts';
+
+/** mixins */
+@import 'mixins/contain';
+@import 'mixins/cover';
+@import 'mixins/font-smoothing';
+
+/** layout */
+@import 'modules/base';
+// @import 'modules/layout';
+// @import 'modules/header';
+// @import 'modules/footer';

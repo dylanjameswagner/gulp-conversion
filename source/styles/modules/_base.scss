@@ -1,0 +1,56 @@
+/** viewport */
+
+	@-webkit-viewport { width: device-width; }
+	@-mos-viewport    { width: device-width; }
+	@-ms-viewport     { width: device-width; }
+	@-o-viewport      { width: device-width; }
+	@viewport         { width: device-width; }
+
+/** box sizing */
+
+	html {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+				box-sizing: border-box;
+	}
+
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+
+/** root */
+
+	html, body {
+		min-width: 320px;
+	}
+
+/** base */
+
+	body {
+		padding: 1em;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	address {
+		font-style: normal;
+	}
+
+	// ol, ul {
+	// 	padding: 0;
+	//
+	// 	li {
+	// 		list-style: none;
+	// 	}
+	// }
+
+	// th, td {
+	// 	padding: 2px;
+	// }

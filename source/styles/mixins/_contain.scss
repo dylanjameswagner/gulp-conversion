@@ -1,0 +1,17 @@
+%contain {
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin contain {
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}

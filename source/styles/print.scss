@@ -1,0 +1,336 @@
+@charset "UTF-8";
+body{
+	background:url(../images/top_bg.jpg) repeat-x top left #fff;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:14px;
+	color:#555555;
+	line-height:24px;
+	margin:0px;
+	padding:0px 0px 20px 0px;
+}
+html{
+	margin:0px;
+	padding:0px;
+}
+img{
+	border:0px;
+	outline:none;
+}
+/*Global*/
+
+h1 {
+	margin:0;
+}
+#global{
+	position:relative;
+	top:0px;
+	left:0px;
+	width:900px;
+}
+a{
+	text-decoration:none;
+	font-weight:bold;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:14px;
+	color:#9ea513;
+	outline:none;
+}
+a:hover{
+	text-decoration:underline;
+	color:#e46f1e;
+
+}
+#menu{
+	width:913px;
+	margin-left:47px;
+	display:none;
+}
+#menu li{
+	margin:0px;
+	padding:0px;
+	display:none;
+}
+#menu ul{
+	margin:0px;
+	padding:0px;
+	display:none;
+}
+#menu li a{
+	text-decoration:none;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	font-size:12px;
+	color:#444444;
+	font-weight:normal;
+	float:left;
+	display:none;
+	height:32px;
+	width:auto;
+	text-align:center;
+	padding:23px 15px 5px 15px;
+}
+#menu li a:hover{
+	background-image:url(../images/menu_marker.jpg);
+	background-position:top center;
+	background-repeat:no-repeat;
+	color:#000;
+	display:none;
+}
+
+#menu a.static{
+	background-image:url(../images/menu_marker.jpg);
+	background-position:top center;
+	background-repeat:no-repeat;
+	text-decoration:none;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	letter-spacing:2px;
+	font-size:12px;
+	font-weight:normal;
+	color:#000;
+	display:none;
+	height:32px;
+	width:auto;
+	padding:23px 15px 5px 15px;
+	float:left;
+}
+#header{
+	width:960px;
+	height:109px;
+	float:left;
+	margin-top:5px;
+	margin-bottom:32px;
+}
+#logo{
+	float:left;
+	height:109px;
+	width:358px;
+	margin:0px 0px 0px 30px;
+}
+#pg_title{
+	float:left;
+	height:109px;
+	width:390px;
+	margin:0px 0px 0px 102px;
+}
+#footer{
+	background-image:url(../images/bottom_bg.jpg);
+	background-position:top left;
+	background-repeat:repeat-x;
+	height:50px;
+	width:100%;
+	font-family:"Lucida Grande", Georgia, sans-serif;
+	font-size:12px;
+	color:#666;
+	clear:both;
+	text-align:center;
+	padding-top:20px;
+}
+
+/* begin styles for RSS Feed
+   This is the most basic style to use for a list with no bullets */
+.rss_items {
+	margin:0;
+	padding:0;
+}
+.rss_item {
+    list-style:none;
+    margin:0 0 15px 0;
+}
+
+#tweet ul, li {
+	list-style:none;
+	margin: 0;
+	padding:0;
+}
+
+/* Begin blog specific styles */
+#left-sidebar {
+	width:200px;
+	float:left;
+	margin:0px 29px 0px 30px;
+	color:#555555;
+}
+#left-sidebar{
+	list-style:content'�';
+}
+#left-sidebar a{
+	text-decoration:none;
+	font-weight:normal;
+	font-style:normal;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:14px;
+	color:#9ea513;
+	outline:none;
+}
+#left-sidebar a:hover{
+	text-decoration:underline;
+	font-weight:normal;
+	font-style:normal;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:14px;
+	color:#e46f1e;
+}
+#left-sidebar h2 {
+	color:#555555;
+	text-transform:uppercase;
+	font-size:14px;
+	letter-spacing:1px;
+	margin:0px;
+}
+#left-sidebar h3{
+	text-decoration:none;
+	font-weight:bold;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:14px;
+	color:#555555;
+	outline:none;
+}
+#left-sidebar h1{
+	color:#e36f1e;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-style:normal;
+	font-size:14px;
+	margin-bottom:-30px;
+}
+
+#left-sidebar p {
+	font-size:12px;
+}
+
+#left-sidebar .widget {
+		margin-bottom:40px;
+}
+
+#left-sidebar .description{
+	line-height:20px;
+}
+.site-main-content {
+	float:left;
+	width:631px;
+	line-height:24px;
+}
+
+.post .meta, .post .posted-by, .post .tags, .post .tags a {
+	font-size:11px;
+	font-family:"Lucida Grande", "Myriad Pro", Arial, sans-serif;
+	font-weight:normal;
+}
+
+.post .posted-by span {
+	color:#9fa617;
+}
+
+.post h1, .post h1 a {
+	color:#e36f1e;
+	font-size:25px;
+	font-style:italic;
+	margin-top:22px;
+	letter-spacing:2px;
+	margin-bottom:43px;
+	font-weight: normal;
+}
+
+.post {
+	font-size: 14px;
+	position:relative;
+}
+
+.home .post, .single .post {
+	margin-bottom: 15px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #ccc;
+}
+
+
+.post .attachment-post-thumbnail {
+	border: 1px solid #9da928;
+	margin-bottom:12px;
+}
+
+.avatar {
+	float:left;
+	margin:0 10px 10px 0;
+}
+
+.comment-list {
+	margin-top: 10px;
+}
+
+.more-link {
+	position:absolute;
+	bottom:25px;
+	right:0px;
+}
+
+#commentform label {
+	font-weight:bold;
+}
+#commentform input {
+	float:right;
+	width:500px;
+}
+#commentform {
+	position: relative;
+}
+
+.form-allowed-tags {
+	font-size: 10px;
+	color: #666;
+}
+
+#commentform #submit {
+	position: absolute;
+	right:0px;
+	bottom:-10px;
+	width:95px;
+}
+
+#commentform textarea {
+	width: 100%;
+}
+
+#respond {
+	border: 3px solid #e46f1f;
+	padding:20px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+
+.comment-wrap {
+	margin-bottom:10px;
+}
+
+.comment-reply-link {
+
+}
+
+#post-navigation {
+	height:40px;
+}
+
+#post-navigation .newer {
+	float:left;
+}
+
+#post-navigation .older {
+	float:right;
+}
+.collapsing.item {
+	text-indent:25px;
+	display:none;
+}
+
+.collapsing.archives a {
+	font-weight:normal;
+	color:#555555;
+}
+
+.collapsing.item a {
+	font-weight:normal;
+	font-style:italic;
+	color:#9fa617;
+}
+
+/* End Blog Styles */

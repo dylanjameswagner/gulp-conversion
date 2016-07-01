@@ -1,0 +1,58 @@
+/** base */
+$color-white   : #ffffff;
+$color-black   : #000000;
+
+$color-darken-5  : darken(#ffffff,  5%);
+$color-darken-10 : darken(#ffffff, 10%);
+$color-darken-15 : darken(#ffffff, 15%);
+$color-darken-20 : darken(#ffffff, 20%);
+$color-darken-25 : darken(#ffffff, 25%);
+$color-darken-30 : darken(#ffffff, 30%);
+$color-darken-35 : darken(#ffffff, 35%);
+$color-darken-40 : darken(#ffffff, 40%);
+$color-darken-45 : darken(#ffffff, 45%);
+$color-darken-50 : darken(#ffffff, 50%);
+$color-darken-55 : darken(#ffffff, 55%);
+$color-darken-60 : darken(#ffffff, 60%);
+$color-darken-65 : darken(#ffffff, 65%);
+$color-darken-70 : darken(#ffffff, 70%);
+$color-darken-75 : darken(#ffffff, 75%);
+$color-darken-80 : darken(#ffffff, 80%);
+$color-darken-85 : darken(#ffffff, 85%);
+$color-darken-90 : darken(#ffffff, 90%);
+$color-darken-95 : darken(#ffffff, 95%);
+
+$color-lighten-5  : lighten(#000000,  5%);
+$color-lighten-10 : lighten(#000000, 10%);
+$color-lighten-15 : lighten(#000000, 15%);
+$color-lighten-20 : lighten(#000000, 20%);
+$color-lighten-25 : lighten(#000000, 25%);
+$color-lighten-30 : lighten(#000000, 30%);
+$color-lighten-35 : lighten(#000000, 35%);
+$color-lighten-40 : lighten(#000000, 40%);
+$color-lighten-45 : lighten(#000000, 45%);
+$color-lighten-50 : lighten(#000000, 50%);
+$color-lighten-55 : lighten(#000000, 55%);
+$color-lighten-60 : lighten(#000000, 60%);
+$color-lighten-65 : lighten(#000000, 65%);
+$color-lighten-70 : lighten(#000000, 70%);
+$color-lighten-75 : lighten(#000000, 75%);
+$color-lighten-80 : lighten(#000000, 80%);
+$color-lighten-85 : lighten(#000000, 85%);
+$color-lighten-90 : lighten(#000000, 90%);
+$color-lighten-95 : lighten(#000000, 95%);
+
+/** wordpress */
+$wpadminbar : #23282d;
+
+$acf-error  : #f55e4f;
+$acf-error-text-shadow : 0 1px 0 #dd4232;
+
+/** custom */
+$color-fixme  : darken(pink, 6%);
+$color-editor : darken(cyan, 8%);
+
+$color-red    : #cc0000;
+$color-orange : #ff9933;
+$color-yellow : #ffcc33;
+$color-green  : #669933;
