@@ -30,7 +30,6 @@ gulp.task('default', [
 gulp.task('build', [
 	'styles',
 	'scripts',
-	'scripts-modernizr',
 	'images',
 	'fonts',
 ]);
@@ -49,10 +48,10 @@ gulp.task('browserSync', ['build'], function() {
 		'public/scripts/*.js',
 		'**/*.php'
 	], {
-		host: 'conversion.local', // This tells browser sync what URL to open on load with port 3000
+		host: 'gulp-conversion.local', // This tells browser sync what URL to open on load with port 3000
 		// port: 4000, // This is if you want to change the port
 		proxy: {
-			target: 'conversion.local:8888', // This is the link to your local as it is in MAMP
+			target: 'gulp-conversion.local:8888', // This is the link to your local as it is in MAMP
 		},
 		open: "external",
 		snippetOptions: {
@@ -81,7 +80,10 @@ gulp.task('styles', function(){
 		.pipe(gulp.dest('public/styles'));
 });
 
-gulp.task('scripts', function(){
+gulp.task('scripts', [
+	'scripts-modernizr',
+	'scripts-vendor',
+], function(){
 	return gulp.src([
 			'source/scripts/script.js',
 		])
@@ -95,6 +97,12 @@ gulp.task('scripts', function(){
 
 gulp.task('scripts-modernizr', function() {
 	return gulp.src('source/scripts/modernizr.js')
+		.pipe(changed('public/scripts'))
+		.pipe(gulp.dest('public/scripts'));
+});
+
+gulp.task('scripts-vendor', function() {
+	return gulp.src('source/scripts/vendor/*.js')
 		.pipe(changed('public/scripts'))
 		.pipe(gulp.dest('public/scripts'));
 });
